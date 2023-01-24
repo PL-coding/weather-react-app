@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import './Weather.css';
 
 export default function Weather(props) {
@@ -20,14 +22,15 @@ export default function Weather(props) {
   }
 
   function getWeather(response) {
-       setWeather({
+           setWeather({
         ready: true,
+        date: new Date(response.data.dt * 1000),
         city: response.data.name,
         temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+      icon: response.data.weather[0].icon
     });
   }
 
@@ -42,33 +45,19 @@ export default function Weather(props) {
         placeholder="Enter a city..."
         onChange={handleChange}
       />
-      <input type="submit" value="Search" />
+      <input type="submit" value="🔍" />
     </form>
   );
 
   if (weather.ready) {
     return (
       <div className="Weather">
-        <header>
-          <div>
-        <h1>{weather.city}</h1></div>
-        <div>
-        <h2>11:04am Tuesday, 24 January 2023</h2>
-        </div></header>
-        <main>
-        <div><ul>
-          <li>Temperature: {Math.round(weather.temperature)}°C</li>
-          <li>Description: {weather.description}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Wind speed: {weather.wind}km/h</li>
-          <li>
-            {" "}
-            <img src={weather.icon} alt={weather.description} />
-          </li>
-        </ul></div>
-        <div>{form}</div></main>
+                  <h2>{form}</h2>
+          <div><WeatherInfo data={weather}/></div>
+       
         
-        
+        <div>Last updated: <FormattedDate date={weather.date} /></div>
+                 
       </div>
     );
   } else { updateCity();

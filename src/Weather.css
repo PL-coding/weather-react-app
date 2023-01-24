@@ -27,3 +27,7 @@
   list-style: none;
   text-align: left;
   }
+
+  .Weather .updateTime {
+    display: inline-block;
+  }

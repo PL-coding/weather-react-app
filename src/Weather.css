@@ -24,11 +24,17 @@
   text-align: left;
   }
 
-  .temperature {
+  .WeatherTemperature {
     font-size: 52px;
     padding-left: 10px;
   }
 
   .weatherIcon {
     text-align: center;
+  }
+
+  .unit {
+    font-size: 16px;
+    position: relative;
+    top: -24px;
   }

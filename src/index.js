@@ -7,7 +7,7 @@ import "./index.css";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Weather />
+    <Weather defaultCity="Sydney" />
     <footer>Coded by Louise Gray and open-sourced on <a href='https://github.com/PL-coding/weather-react-app' target="_blank" rel="noreferrer"> GitHub</a></footer>
   </React.StrictMode>
 );

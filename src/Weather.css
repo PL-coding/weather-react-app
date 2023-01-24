@@ -2,7 +2,28 @@
   text-align: center;
 }
 
+.Weather header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Weather h1 {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.Weather h2 {
+  font-size: 48px;
+  line-height: 60px;
+}
+
+.Weather main {
+  display: flex;
+  justify-content: space-between;
+}
+
 .Weather ul {
   display: inline-block;
+  list-style: none;
   text-align: left;
-}
+  }

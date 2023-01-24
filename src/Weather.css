@@ -2,14 +2,14 @@
   text-align: center;
 }
 
-.Weather header {
-  display: flex;
-  justify-content: space-around;
+.Weather form {
+  text-align: right;
 }
 
 .Weather h1 {
   font-size: 60px;
   line-height: 60px;
+  text-align: left;
 }
 
 .Weather h2 {
@@ -17,17 +17,18 @@
   line-height: 60px;
 }
 
-.Weather main {
-  display: flex;
-  justify-content: space-between;
-}
-
 .Weather ul {
   display: inline-block;
   list-style: none;
+  padding: 0;
   text-align: left;
   }
 
-  .Weather .updateTime {
-    display: inline-block;
+  .temperature {
+    font-size: 52px;
+    padding-left: 10px;
+  }
+
+  .weatherIcon {
+    text-align: center;
   }

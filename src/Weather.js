@@ -37,9 +37,11 @@ export default function Weather(props) {
   function handleChange(event) {
     setCity(event.target.value);
   }
-
-  let form = (
-    <form onSubmit={handleSubmit}>
+  
+  if (weather.ready) {
+    return (
+      <div className="Weather container">
+      <form onSubmit={handleSubmit}>
       <input
         type="search"
         placeholder="Enter a city..."
@@ -47,18 +49,9 @@ export default function Weather(props) {
       />
       <input type="submit" value="🔍" />
     </form>
-  );
-
-  if (weather.ready) {
-    return (
-      <div className="Weather">
-                  <h2>{form}</h2>
           <div><WeatherInfo data={weather}/></div>
-       
-        
-        <div>Last updated: <FormattedDate date={weather.date} /></div>
-                 
-      </div>
+          <div>Last updated: <FormattedDate date={weather.date} /></div>
+    </div>
     );
   } else { updateCity();
     return "Loading..."

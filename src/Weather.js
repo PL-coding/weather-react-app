@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherForecast from './WeatherForecast';
 import WeatherInfo from "./WeatherInfo";
 import './Weather.css';
 
@@ -22,16 +22,17 @@ export default function Weather(props) {
   }
 
   function getWeather(response) {
-           setWeather({
-        ready: true,
-        date: new Date(response.data.dt * 1000),
-        city: response.data.name,
-        temperature: response.data.main.temp,
+               setWeather({
+      city: response.data.name,
+      coordinates: response.data.coord,
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
+      icon: response.data.weather[0].icon,
+      ready: true,
+      temperature: response.data.main.temp,
       wind: response.data.wind.speed,
-      icon: response.data.weather[0].icon
-    });
+          });
   }
 
   function handleChange(event) {
@@ -48,9 +49,10 @@ export default function Weather(props) {
         onChange={handleChange}
       />
       <input type="submit" value="🔍" />
-    </form>
+      </form>
           <div><WeatherInfo data={weather}/></div>
-          <div>Last updated: <FormattedDate date={weather.date} /></div>
+          <WeatherForecast coordinates={weather.coordinates}/>
+          
     </div>
     );
   } else { updateCity();

@@ -7,8 +7,8 @@
 }
 
 .Weather h1 {
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 75px;
+  line-height: 75px;
   text-align: left;
 }
 
@@ -24,8 +24,13 @@
   text-align: left;
   }
 
+  .WeatherDescription {
+    font-size: 13px;
+  }
+
   .WeatherTemperature {
-    font-size: 52px;
+    font-size: 70px;
+    line-height: 70px;
     padding-left: 10px;
   }
 
@@ -36,5 +41,11 @@
   .unit {
     font-size: 16px;
     position: relative;
-    top: -24px;
+    top: -37px;
+  }
+
+  .Updated {
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-align: left;
   }

@@ -4,6 +4,7 @@
 
 .Weather form {
   margin-bottom: 20px;
+  padding: 0 20px 0 0;
   text-align: right;
 }
 
@@ -23,15 +24,19 @@
   .WeatherDescription {
     font-size: 13px;
   }
+  
+  .weatherIcon {
+    text-align: center;
+  }
+
+  .WeatherInfo {
+    padding: 0 0 0 20px;
+  }
 
   .WeatherTemperature {
     font-size: 70px;
     line-height: 70px;
     padding-left: 10px;
-  }
-
-  .weatherIcon {
-    text-align: center;
   }
 
   .unit {
